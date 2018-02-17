@@ -1,0 +1,23 @@
+name:                geoip-lookup
+version:             0.1.0.0
+github:              "Akii/geoip-lookup"
+license:             MIT
+author:              "Philipp Maier"
+maintainer:          "zedd@akii.de"
+copyright:           "2018 Philipp Maier"
+
+description:         Example package that goes with the blog post about geoip lookup
+
+dependencies:
+- base >= 4.7 && < 5
+- classy-prelude
+- http-conduit
+- aeson
+
+library:
+  source-dirs: src
+  ghc-options:
+    - -Wall
+  default-extensions:
+  - NoImplicitPrelude
+  - OverloadedStrings
