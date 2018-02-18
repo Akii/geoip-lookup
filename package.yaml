@@ -13,6 +13,7 @@ dependencies:
 - classy-prelude
 - http-conduit
 - aeson
+- concurrent-output
 
 library:
   source-dirs: src

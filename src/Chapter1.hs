@@ -11,6 +11,8 @@ import           ClassyPrelude
 import           Data.Aeson
 import           Network.HTTP.Simple
 
+import IPs
+
 -- | Represents an IP address like 172.217.22.46
 newtype IPAddress = IPAddress
   { getAddress :: String
@@ -33,5 +35,9 @@ fetchGeoIP ipAddr = do
   req <- parseRequest ("http://freegeoip.net/json/" <> getAddress ipAddr)
   getResponseBody <$> httpJSON req
 
-main :: IO ()
-main = fetchGeoIP "172.217.22.46" >>= print
+lookupOne :: IO ()
+lookupOne = fetchGeoIP "172.217.22.46" >>= print
+
+lookupAll :: IO ()
+lookupAll =
+  forM_ manyIPs $ \ip -> fetchGeoIP (IPAddress ip) >>= print
