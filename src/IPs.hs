@@ -6,6 +6,10 @@ import Prelude
 sameIP10Times :: [String]
 sameIP10Times = replicate 10 $ head manyIPs
 
+someIPsIntervened :: [String]
+someIPsIntervened =
+  replicate 5 (head manyIPs) ++ replicate 5 (manyIPs !! 1)
+
 -- | 100 IPs taken from here https://ring.nlnog.net/api/1.0/nodes
 manyIPs :: [String]
 manyIPs =

@@ -16,7 +16,7 @@ import IPs
 -- | Represents an IP address like 172.217.22.46
 newtype IPAddress = IPAddress
   { getAddress :: String
-  }
+  } deriving (Eq, Ord)
 
 -- | Allows us to write ("172.217.22.46" :: IPAddress)
 instance IsString IPAddress where
